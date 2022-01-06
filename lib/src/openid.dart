@@ -121,7 +121,7 @@ class Issuer {
     if (segments.isNotEmpty && segments.last.isEmpty) {
       segments.removeLast();
     }
-    segments.addAll(['.well-known', 'openid-configuration']);
+    segments.addAll(['.well-known', 'v2.0', 'openid-configuration']);
     uri = uri.replace(pathSegments: segments);
 
     var json = await http.get(uri, client: httpClient);
